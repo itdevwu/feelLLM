@@ -6,16 +6,18 @@ from dotenv import load_dotenv
 # 加载 .env 文件中的环境变量
 load_dotenv()
 
-def get_news(api_key, 
-             query='Dogecoin', 
-             from_days_ago=3, 
-             sort_by='relevancy', 
-             page_size=100, 
-             page=1, 
-             language=None, 
-             sources=None, 
-             domains=None, 
-             exclude_domains=None):
+def get_news(
+        api_key, 
+        query='Dogecoin', 
+        from_days_ago=3, 
+        sort_by='relevancy', 
+        page_size=100, 
+        page=1, 
+        language=None, 
+        sources=None, 
+        domains=None, 
+        exclude_domains=None
+    ):
     """
     从 NewsAPI 获取新闻文章。
 
@@ -92,7 +94,7 @@ def get_news(api_key,
     total_results = data.get('totalResults', 0)
     articles = data.get('articles', [])
 
-    print(f"总共有 {total_results} 篇相关文章（显示第 {page} 页的 {len(articles)} 篇）\n")
+    # print(f"总共有 {total_results} 篇相关文章（显示第 {page} 页的 {len(articles)} 篇）\n")
 
     for idx, article in enumerate(articles, start=1):
         source = article.get('source', {}).get('name', 'Unknown Source')
@@ -102,14 +104,14 @@ def get_news(api_key,
         url = article.get('url', '')
         published_at = article.get('publishedAt', 'Unknown Date')
 
-        print(f"文章 {idx}:")
-        print(f"来源: {source}")
-        print(f"作者: {author}")
-        print(f"标题: {title}")
-        print(f"描述: {description}")
-        print(f"链接: {url}")
-        print(f"发布时间: {published_at}")
-        print("-" * 80)
+        # print(f"文章 {idx}:")
+        # print(f"来源: {source}")
+        # print(f"作者: {author}")
+        # print(f"标题: {title}")
+        # print(f"描述: {description}")
+        # print(f"链接: {url}")
+        # print(f"发布时间: {published_at}")
+        # print("-" * 80)
 
     return articles
 

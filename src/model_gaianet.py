@@ -92,7 +92,7 @@ class GaiaNetCausalModelForClassification:
                 .get("message", {})
                 .get("content", "")
             )
-            print(f"response_text: {response_text}")
+            # print(f"response_text: {response_text}")
             first_word = response_text.split()[0].lower() if response_text else ""
             if first_word in ["good", "bad", "neutral"]:
                 return response.status_code, first_word
