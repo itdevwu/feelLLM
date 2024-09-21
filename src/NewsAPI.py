@@ -6,16 +6,18 @@ from dotenv import load_dotenv
 # 加载 .env 文件中的环境变量
 load_dotenv()
 
-def get_news(api_key, 
-             query='Dogecoin', 
-             from_days_ago=3, 
-             sort_by='relevancy', 
-             page_size=100, 
-             page=1, 
-             language=None, 
-             sources=None, 
-             domains=None, 
-             exclude_domains=None):
+def get_news(
+        api_key, 
+        query='Dogecoin', 
+        from_days_ago=3, 
+        sort_by='relevancy', 
+        page_size=100, 
+        page=1, 
+        language=None, 
+        sources=None, 
+        domains=None, 
+        exclude_domains=None
+    ):
     """
     从 NewsAPI 获取新闻文章。
 
