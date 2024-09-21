@@ -1,3 +1,4 @@
+# from src.model_gaianet import GaiaNetCausalModelForClassification
 from src.model_gaianet import GaiaNetCausalModelForClassification
 
 
